@@ -1,0 +1,11 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+    <img src="{{ ad.image.url }}"><br>
+    {{ads.title}}<br>
+    {{ads.info}}<br>
+    {{ads.author}}<br>
+    {{ads.pub_date}}<br>
+
+<a href="{% url 'AddCommentAds' pk=announcement.id %}"> Добавить коментарий </a>
+{% endblock %}

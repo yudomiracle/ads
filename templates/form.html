@@ -1,0 +1,21 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+    <h1>Значение с подписью: {{ value }}</h1>
+    <h1> {{ form_name }} </h1>
+    {% if update_text %}
+        <p>Вы хотите {{ action }} запись {{ model }} с ключем {{ object.pk }}</p>
+    {% endif %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endblock %}

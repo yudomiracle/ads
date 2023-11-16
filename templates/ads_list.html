@@ -1,0 +1,9 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+    {% for ad in ads %}
+    <img src="{{ ad.image.url }}"><br>
+    {{ ad.title }}<br>
+    {{ ad.pub_date }}<br><br><br>
+    {% endfor %}
+{% endblock %}
